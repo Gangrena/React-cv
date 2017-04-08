@@ -18,6 +18,10 @@
     margin-top:2cm;
 }
 
+.list-margin-top-before{
+    margin-top:1cm;
+}
+
 .section-header{
     text-transform: uppercase;
 }

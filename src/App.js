@@ -119,7 +119,7 @@ class SimpleList extends Component{
        <div className="section-margin-top-before">
         <ListHeader Header={this.props.Header}/>
         <div>
-         
+           {this.props.List.map((item,index) => <SimpleListDetail key={index} Value={item}/>)}
         </div>
       </div>
     )
@@ -127,6 +127,32 @@ class SimpleList extends Component{
   
 }
 
+const SimpleListDetail = (props) => {
+  return(
+    <div className="list-margin-top-before">
+      <SimpleListDetailItem Header={"Name of the app/type of the app: "} Value={props.Value.NameOfApp}/>
+      <SimpleListDetailItem Header={"Project duration: "} Value={props.Value.ProjectDuration}/>
+      <SimpleListDetailItem Header={"Technologies: "} Value={props.Value.Technologies}/>
+      <SimpleListDetailItem Header={"Role in the project: "} Value={props.Value.RoleInTheProject}/>
+      <SimpleListDetailItem Header={"Branch: "} Value={props.Value.Branch}/>
+    </div>    
+  )  
+}
+
+const SimpleListDetailItem = (props) => {
+  return(
+    <div>
+      <h4>
+        <strong className="primary-color">
+          {props.Header}
+        </strong>
+        <strong>
+          {props.Value}
+        </strong>
+      </h4>
+    </div>
+  )  
+}
 
 class App extends Component {
   render(){
@@ -136,7 +162,7 @@ class App extends Component {
           <Header/>       
           <PersonalData Name={Person.Name} Position={Person.Position} Experience={Person.Experience} />
           <List Header={"it skills"} List={Person.Skills}/>
-          <SimpleList Header={"professional experience - selected projects"} />
+          <SimpleList Header={"professional experience - selected projects"} List={Person.ProfessionalExperience}/>
           <List Header={"work experience"} List={Person.WorkExperience}/>
           <List Header={"education"} List={Person.Education}/>
         </div>
