@@ -1,0 +1,23 @@
+.base-color {
+    color: rgb(255,99,1);    
+}
+
+.primary-color {
+    color: grey;
+}
+
+.page-header-image-normal{
+    content: url('../public/images/iteo_header.jpg');
+}
+.photo-placeholder-medium{
+    height: 175px ;
+    content: url('../public/images/photo_placeholder.jpg');   
+}
+
+.section-margin-top-before{
+    margin-top:2cm;
+}
+
+.section-header{
+    text-transform: uppercase;
+}
